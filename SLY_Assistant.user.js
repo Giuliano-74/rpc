@@ -27,7 +27,6 @@
 
     let saRPCs = [
         'https://mainnet-rpc.staratlas.com/mainnet?apiKey=01KM93S12XQ3NK0EVDB9J1V36D',
-		'https://mainnet.helius-rpc.com/?api-key=5250a4e6-c695-4326-8ef8-4a579398033d',
     ];
     let readRPCs = customReadRPCs.concat(saRPCs);
     let writeRPCs = customWriteRPCs.concat(saRPCs);
