@@ -345,7 +345,12 @@
 			);
 			// Added "NetworkError": It happens when Cloudflare blocks the request with Status Code 502. Error message: "TypeError: NetworkError when attempting to fetch resource at [...]"
 		}
-
+if (origMethod && origMethod.name === 'getTransaction' && args && args[1] && typeof args[1] === 'object') {
+        if ('preflightCommitment' in args[1]) {
+            if (!args[1].commitment) args[1].commitment = args[1].preflightCommitment;
+            delete args[1].preflightCommitment;
+        }
+    }
 		let result;
 		try {
 			result = await origMethod.apply(target, args);
